@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Breeze - Simple & Fresh Mojito</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        oceanDark: '#1E2E38',
+                        oceanGold: '#E5A93C',
+                        oceanPeach: '#F3A47A',
+                        oceanPink: '#E8A7A1',
+                        oceanSand: '#FCFAF6',
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out infinite 3s',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-morphism {
+            background: rgba(252, 250, 246, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 169, 60, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-oceanSand text-oceanDark font-sans selection:bg-oceanPeach selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 glass-morphism">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex flex-col items-center group">
+                <span class="font-serif text-2xl font-bold tracking-widest text-oceanDark group-hover:text-oceanGold transition-colors">OCEAN BREEZE</span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-oceanGold -mt-1">Refreshing Mojito</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-widest">
+                <a href="#menu" class="hover:text-oceanGold transition-colors">MENU</a>
+                <a href="#racik" class="hover:text-oceanGold transition-colors">RACIK SENDIRI</a>
+                <a href="#pesan" class="bg-oceanDark text-white px-5 py-2 rounded-full hover:bg-oceanGold hover:text-oceanDark transition-all shadow-sm">ORDER (10K)</a>
+            </div>
+            <!-- Mobile Menu Simple Button -->
+            <a href="#pesan" class="md:hidden bg-oceanDark text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">Pesan</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-28 pb-12 flex items-center justify-center overflow-hidden bg-gradient-to-b from-orange-50/50 via-rose-50/20 to-oceanSand">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <!-- Hero Left -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-orange-100/60 border border-orange-200/50 px-3.5 py-1 rounded-full text-[11px] font-bold tracking-widest text-orange-800">
+                    <span>🍹 BREEZY DRINKS, GOOD VIBES</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight tracking-wide text-oceanDark">
+                    Ocean <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-400">Breeze</span>
+                </h1>
+                <p class="font-serif text-xl md:text-2xl text-gray-600 italic">
+                    "Kesegaran mojito premium tepi pantai, kini lebih simpel."
+                </p>
+                <p class="text-gray-500 max-w-md mx-auto lg:mx-0 text-sm leading-relaxed">
+                    Nikmati sensasi dingin rasa buah asli berpadu soda jernih dan daun mint segar. Diracik praktis, disajikan instan, ramah di kantong.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <div class="bg-white px-5 py-2.5 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                        <span class="text-xs text-gray-400 line-through">IDR 20K</span>
+                        <span class="text-lg font-bold text-oceanDark">Hanya <span class="text-orange-600 font-serif text-2xl">10K</span></span>
+                    </div>
+                    <a href="#menu" class="bg-oceanDark text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-orange-500 transition-colors shadow-md flex items-center gap-2">
+                        <span>Pilih Varian Menu</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right (Visual 3 Gelas Aesthetic) -->
+            <div class="lg:col-span-5 relative flex justify-center items-center h-[350px]">
+                <!-- Sunset Sun Circle -->
+                <div class="absolute w-60 h-60 rounded-full bg-gradient-to-t from-amber-400 to-rose-400 opacity-80 blur-sm flex items-center justify-center shadow-lg">
+                    <div class="w-40 h-40 rounded-full bg-white/20 blur-md"></div>
+                </div>
+
+                <!-- 3 Minimalist Cup Visualizers representing Lemon, Sunset Soda, and Lychee -->
+                <div class="absolute w-full h-full flex justify-center items-end pb-4">
+                    <!-- Lemon Breeze (Kiri) -->
+                    <div class="absolute left-6 bottom-8 w-24 h-40 rounded-t-2xl rounded-b-[30px] bg-gradient-to-b from-yellow-300 via-amber-400 to-yellow-500 p-1.5 shadow-lg border border-white/40 transform -rotate-12 hover:rotate-0 transition-all duration-300 animate-float-slow group cursor-pointer">
+                        <div class="w-full h-full rounded-t-xl rounded-b-[24px] bg-white/10 relative overflow-hidden flex flex-col justify-between p-2">
+                            <span class="text-lg">🍃</span>
+                            <span class="text-sm self-center">🍋</span>
+                        </div>
+                    </div>
+
+                    <!-- Sunset Soda (Tengah - Representing the sunset look) -->
+                    <div class="absolute z-10 bottom-2 w-28 h-44 rounded-t-2xl rounded-b-[30px] bg-gradient-to-b from-yellow-300 via-orange-400 to-rose-400 p-1.5 shadow-xl border border-white/50 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                        <div class="w-full h-full rounded-t-xl rounded-b-[24px] bg-white/15 relative overflow-hidden flex flex-col justify-between p-2">
+                            <span class="text-xl">🍃</span>
+                            <div class="flex justify-between items-center text-sm">
+                                <span>🍋</span>
+                                <span>🌸</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lychee Splash (Kanan) -->
+                    <div class="absolute right-6 bottom-8 w-24 h-40 rounded-t-2xl rounded-b-[30px] bg-gradient-to-b from-rose-200 via-pink-300 to-rose-400 p-1.5 shadow-lg border border-white/40 transform rotate-12 hover:rotate-0 transition-all duration-300 animate-float-delayed group cursor-pointer">
+                        <div class="w-full h-full rounded-t-xl rounded-b-[24px] bg-white/10 relative overflow-hidden flex flex-col justify-between p-2">
+                            <span class="text-lg">🍃</span>
+                            <span class="text-sm self-center">🌸</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Menu Section (Simplified Grid) -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+            
+            <div class="text-center max-w-md mx-auto mb-14 space-y-2">
+                <span class="text-xs uppercase font-bold text-orange-500 tracking-wider">PILIHAN SEGAR & SEDERHANA</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold">Varian Menu Utama</h2>
+                <p class="text-xs text-gray-400 italic">Hanya menggunakan buah asli, daun mint segar, dan es batu kristal jernih.</p>
+                <div class="w-16 h-[2px] bg-orange-300 mx-auto mt-2"></div>
+            </div>
+
+            <!-- Simple Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Lychee Splash -->
+                <div class="bg-rose-50/30 border border-rose-100 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="text-3xl">🌸</span>
+                            <span class="bg-rose-100 text-rose-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Manis & Lembut</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-oceanDark">Lychee Splash</h3>
+                            <p class="text-xs text-gray-500 mt-1">Ekstrak buah leci manis eksotis, perasan lemon tipis, daun mint segar, soda.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-rose-100/50 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-rose-700">Rp 10.000</span>
+                        <button onclick="addProduct('lychee')" class="bg-rose-500 text-white w-9 h-9 rounded-xl flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="fa-solid fa-plus text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Lemon Breeze -->
+                <div class="bg-amber-50/30 border border-amber-100 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="text-3xl">🍋</span>
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Kecut Segar</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-oceanDark">Lemon Breeze</h3>
+                            <p class="text-xs text-gray-500 mt-1">Sari lemon segar melimpah, daun mint pilihan, sirup tebu alami, sparkling soda dingin.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-amber-100/50 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-amber-700">Rp 10.000</span>
+                        <button onclick="addProduct('lemon')" class="bg-amber-500 text-white w-9 h-9 rounded-xl flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i class="fa-solid fa-plus text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Sunset Soda -->
+                <div class="bg-orange-50/30 border border-orange-100 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="text-3xl">🍹</span>
+                            <span class="bg-orange-100 text-orange-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Favorit Senja</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-oceanDark">Sunset Soda</h3>
+                            <p class="text-xs text-gray-500 mt-1">Kombinasi asam segar buah lemon asli dan harum manis leci. Memberikan visual gradasi cantik layaknya senja.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-100/50 flex items-center justify-between">
+                        <span class="font-serif text-lg font-bold text-orange-700">Rp 10.000</span>
+                        <button onclick="addProduct('sunset')" class="bg-orange-500 text-white w-9 h-9 rounded-xl flex items-center justify-center hover:bg-orange-600 transition-colors">
+                            <i class="fa-solid fa-plus text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Super Simple Customizer Section -->
+    <section id="racik" class="py-16 bg-orange-50/20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-white border border-orange-100 rounded-3xl p-8 shadow-sm text-center space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold text-orange-500 uppercase tracking-widest">KREASI BEBAS</span>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-oceanDark">Mau Racikan Sendiri?</h2>
+                    <p class="text-xs text-gray-500 max-w-md mx-auto">Butuh kombinasi berbeda? Tentukan komposisi dasar minuman Anda dan biarkan barista kami mengaduknya!</p>
+                </div>
+
+                <!-- Selector Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="selectCustomBase('Hanya Lemon')" id="cust-lemon" class="flex-1 py-3 px-4 rounded-xl border-2 border-orange-400 bg-orange-50 text-xs md:text-sm font-semibold transition-all">
+                        🍋 Ekstra Lemon
+                    </button>
+                    <button onclick="selectCustomBase('Hanya Leci')" id="cust-lychee" class="flex-1 py-3 px-4 rounded-xl border border-gray-200 hover:border-orange-200 text-xs md:text-sm font-semibold transition-all">
+                        🌸 Ekstra Leci
+                    </button>
+                    <button onclick="selectCustomBase('Double Lemon-Leci')" id="cust-both" class="flex-1 py-3 px-4 rounded-xl border border-gray-200 hover:border-orange-200 text-xs md:text-sm font-semibold transition-all">
+                        🍹 Double Mix Lemon-Leci
+                    </button>
+                </div>
+
+                <div class="p-4 bg-orange-50 rounded-2xl border border-orange-100/50 inline-block">
+                    <span class="text-xs font-semibold text-gray-600">Pilihan Anda: </span>
+                    <span id="customSelectionText" class="text-xs font-bold text-orange-600">Ekstra Lemon</span>
+                </div>
+
+                <div>
+                    <button onclick="addCustomToOrder()" class="bg-oceanDark text-white px-8 py-3 rounded-full text-xs font-bold hover:bg-orange-500 transition-colors shadow-sm">
+                        Masukkan Racikan Saya ke Order +
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ordering / Checkout Form -->
+    <section id="pesan" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100/30 border border-orange-100 p-8 md:p-10 rounded-3xl shadow-sm relative overflow-hidden">
+                
+                <!-- Simple 10k badge -->
+                <div class="absolute -top-3 -right-3 bg-orange-500 text-white font-serif text-sm font-bold w-24 h-24 rounded-full flex items-center justify-center shadow-md transform rotate-12">
+                    <span class="mt-4 mr-4">10K Saja!</span>
+                </div>
+
+                <div class="text-center space-y-2 mb-8">
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-oceanDark">Formulir Pesanan Sejuk</h2>
+                    <p class="text-xs text-gray-500">Isi data pengiriman. Pesanan akan langsung dikirimkan ke WhatsApp kami.</p>
+                </div>
+
+                <form onsubmit="sendWhatsAppOrder(event)" class="space-y-6">
+                    <!-- Client Info -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-gray-500 mb-1.5">Nama Anda</label>
+                            <input type="text" id="custName" required placeholder="Contoh: Rian" class="w-full p-3 rounded-xl border border-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300 bg-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-gray-500 mb-1.5">No. WhatsApp</label>
+                            <input type="tel" id="custPhone" required placeholder="Contoh: 0812xxxx" class="w-full p-3 rounded-xl border border-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300 bg-white text-xs">
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase text-gray-500 mb-1.5">Lokasi Pengantaran / Area Pantai</label>
+                        <input type="text" id="custLocation" required placeholder="Contoh: Depan Payung Pantai Kuning No. 5" class="w-full p-3 rounded-xl border border-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300 bg-white text-xs">
+                    </div>
+
+                    <!-- Quantities -->
+                    <div class="space-y-3">
+                        <label class="block text-[10px] font-bold uppercase text-gray-600">Atur Jumlah Pesanan:</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <!-- Lychee Splash -->
+                            <div class="bg-white p-3 rounded-xl border border-orange-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-gray-600">🌸 Lychee Splash</span>
+                                <div class="flex items-center space-x-2">
+                                    <button type="button" onclick="changeQty('qty-lychee', -1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">-</button>
+                                    <span id="qty-lychee" class="font-bold text-xs w-4 text-center">1</span>
+                                    <button type="button" onclick="changeQty('qty-lychee', 1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">+</button>
+                                </div>
+                            </div>
+                            <!-- Lemon Breeze -->
+                            <div class="bg-white p-3 rounded-xl border border-orange-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-gray-600">🍋 Lemon Breeze</span>
+                                <div class="flex items-center space-x-2">
+                                    <button type="button" onclick="changeQty('qty-lemon', -1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">-</button>
+                                    <span id="qty-lemon" class="font-bold text-xs w-4 text-center">0</span>
+                                    <button type="button" onclick="changeQty('qty-lemon', 1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">+</button>
+                                </div>
+                            </div>
+                            <!-- Sunset Soda -->
+                            <div class="bg-white p-3 rounded-xl border border-orange-100 flex items-center justify-between">
+                                <span class="text-xs font-bold text-gray-600">🍹 Sunset Soda</span>
+                                <div class="flex items-center space-x-2">
+                                    <button type="button" onclick="changeQty('qty-sunset', -1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">-</button>
+                                    <span id="qty-sunset" class="font-bold text-xs w-4 text-center">0</span>
+                                    <button type="button" onclick="changeQty('qty-sunset', 1)" class="w-6 h-6 rounded-md bg-gray-100 hover:bg-orange-100 text-xs font-bold">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Order Note Area (Hidden until used) -->
+                    <div id="custom-mix-box" class="hidden bg-orange-100/50 p-3 rounded-xl border border-orange-200/50 flex justify-between items-center">
+                        <span class="text-xs text-orange-800">
+                            ✨ <strong>Racikan Kustom Anda:</strong> <span id="custom-mix-desc"></span>
+                        </span>
+                        <button type="button" onclick="removeCustomMix()" class="text-xs text-red-500 hover:underline">Hapus</button>
+                    </div>
+
+                    <!-- Sum -->
+                    <div class="flex justify-between items-center bg-oceanDark text-white p-5 rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-orange-300 uppercase tracking-widest block font-semibold">Total Pembayaran</span>
+                            <span class="text-[10px] text-gray-400">*COD (Bayar di Tempat)</span>
+                        </div>
+                        <span id="total-price" class="text-2xl font-serif font-bold text-oceanGold">IDR 10.000</span>
+                    </div>
+
+                    <!-- Button Submit -->
+                    <button type="submit" class="w-full bg-orange-500 text-white py-3.5 rounded-xl font-bold hover:bg-orange-600 transition-colors text-sm flex items-center justify-center space-x-2 shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Kirim Pesanan ke WhatsApp</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-oceanDark text-white py-12 text-center border-t border-orange-900/10">
+        <div class="max-w-4xl mx-auto px-6 space-y-4">
+            <h3 class="font-serif text-xl font-bold tracking-widest text-oceanGold">OCEAN BREEZE</h3>
+            <p class="text-xs text-gray-400 max-w-sm mx-auto">Pesisir Pantai Biru Indah, Area Payung Orange (Depan Sunset Resto), Bali / Manado.</p>
+            <p class="text-[11px] text-gray-500">&copy; 2026 Ocean Breeze. Seluruh Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-white border border-green-200 rounded-xl p-3.5 shadow-lg translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-2 pointer-events-none">
+        <span class="text-green-500 text-sm">✔️</span>
+        <span class="text-xs font-semibold text-gray-700" id="toast-text">Berhasil ditambahkan!</span>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        // State
+        let customSelection = "Hanya Lemon";
+        let hasCustomMix = false;
+
+        // Customizer Base Selection
+        function selectCustomBase(value) {
+            customSelection = value;
+            document.getElementById('customSelectionText').innerText = value;
+            
+            // Highlight Button
+            const btns = {
+                'Hanya Lemon': 'cust-lemon',
+                'Hanya Leci': 'cust-lychee',
+                'Double Lemon-Leci': 'cust-both'
+            };
+
+            Object.keys(btns).forEach(key => {
+                const btn = document.getElementById(btns[key]);
+                if (key === value) {
+                    btn.className = "flex-1 py-3 px-4 rounded-xl border-2 border-orange-400 bg-orange-50 text-xs md:text-sm font-semibold transition-all";
+                } else {
+                    btn.className = "flex-1 py-3 px-4 rounded-xl border border-gray-200 hover:border-orange-200 text-xs md:text-sm font-semibold transition-all";
+                }
+            });
+        }
+
+        function addCustomToOrder() {
+            hasCustomMix = true;
+            document.getElementById('custom-mix-box').classList.remove('hidden');
+            document.getElementById('custom-mix-desc').innerText = customSelection;
+            calculateTotal();
+            showToast(`Racikan "${customSelection}" dimasukkan ke form order!`);
+            document.getElementById('pesan').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function removeCustomMix() {
+            hasCustomMix = false;
+            document.getElementById('custom-mix-box').classList.add('hidden');
+            calculateTotal();
+        }
+
+        // Add Product from Cards
+        function addProduct(type) {
+            const qtyId = `qty-${type}`;
+            changeQty(qtyId, 1);
+            
+            let displayName = "";
+            if (type === 'lychee') displayName = "Lychee Splash";
+            if (type === 'lemon') displayName = "Lemon Breeze";
+            if (type === 'sunset') displayName = "Sunset Soda";
+
+            showToast(`1 Gelas ${displayName} masuk ke order.`);
+        }
+
+        // Change Quantity Helpers
+        function changeQty(id, diff) {
+            const el = document.getElementById(id);
+            let val = parseInt(el.innerText);
+            if (val + diff >= 0) {
+                el.innerText = val + diff;
+            }
+            calculateTotal();
+        }
+
+        // Calculate Total
+        function calculateTotal() {
+            const lychee = parseInt(document.getElementById('qty-lychee').innerText);
+            const lemon = parseInt(document.getElementById('qty-lemon').innerText);
+            const sunset = parseInt(document.getElementById('qty-sunset').innerText);
+
+            let qtyTotal = lychee + lemon + sunset;
+            if (hasCustomMix) qtyTotal += 1;
+
+            const total = qtyTotal * 10000;
+            document.getElementById('total-price').innerText = `IDR ${total.toLocaleString('id-ID')}`;
+        }
+
+        // Notification system
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // WhatsApp Sender
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const location = document.getElementById('custLocation').value;
+
+            const lychee = parseInt(document.getElementById('qty-lychee').innerText);
+            const lemon = parseInt(document.getElementById('qty-lemon').innerText);
+            const sunset = parseInt(document.getElementById('qty-sunset').innerText);
+
+            let orderItems = [];
+            if (lychee > 0) orderItems.push(`- Lychee Splash (${lychee} Gelas)`);
+            if (lemon > 0) orderItems.push(`- Lemon Breeze (${lemon} Gelas)`);
+            if (sunset > 0) orderItems.push(`- Sunset Soda (${sunset} Gelas)`);
+            if (hasCustomMix) orderItems.push(`- Custom Mix: ${customSelection} (1 Gelas)`);
+
+            if (orderItems.length === 0) {
+                showToast("Tambahkan minimal 1 minuman untuk memesan!");
+                return;
+            }
+
+            const total = document.getElementById('total-price').innerText;
+
+            const message = `Halo Ocean Breeze! Saya ingin memesan mojito:\n\n` +
+                            `👤 *Nama:* ${name}\n` +
+                            `📞 *No. WA:* ${phone}\n` +
+                            `📍 *Lokasi:* ${location}\n\n` +
+                            `📦 *Pesanan:*\n${orderItems.join('\n')}\n\n` +
+                            `💰 *Total Pembayaran:* ${total} (COD)\n\n` +
+                            `Mohon segera diproses ya, terima kasih! 🍹🌅`;
+
+            const url = `https://wa.me/628123456789?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
